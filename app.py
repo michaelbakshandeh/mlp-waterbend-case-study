@@ -47,12 +47,12 @@ def _fmt_raw(metric: str) -> str:
 MACRO_SOURCES_MD = """\
 | Metric | Source | Definition / methodology |
 |---|---|---|
-| Limited-Service Revenue | BLS series **SM72251XUSN** | Monthly retail sales for limited-service eating places. Category covers fast-food, QSR, and sandwich-style concepts (NAICS 722513). Likely excludes "Snack and Nonalcoholic Beverage Bars" (NAICS 722515) where coffee shops sit — so BROS-style concepts are benchmarked against a partial-fit category. |
+| Limited-Service Revenue | BLS series **SM72251XUSN** | Monthly retail sales for limited-service eating places. Limited service eating places are restaurant/food service establishments where customers order/select food before eating and pay before eating (includes: pizza, takeout, fast-food, fast casual). |
 | Limited-Service CPI | BLS CPI series **CUUR0000SEFV02** | "Limited service meals and snacks", US city avg, not seasonally adjusted. Tracks the price consumers pay at the register; excludes mix-shift effects (such as LTOs) that companies report inside their own ticket calc. |
-| Implied Traffic Index | Derived | Limited-Service Revenue (indexed) ÷ Limited-Service CPI × 100. Real volume of transactions implied by dividing the limited service revenue by the limited service CPI. |
-| Food Input Price Index | FRED / BLS PPI series **PCU311311** | Producer Price Index by Industry: Food Manufacturing — wholesale prices manufacturers charge for processed foods. An industry wide index. |
-| Food Cost % Revenue | Derived | Anchored at a 30% starting food-cost ratio that drifts with a food-pressure factor built from Implied Traffic × Food Input Price relative to Revenue (all indexed). Not a measured industry quantity. |
-| Labor Cost % Revenue | Derived | Labor cost ÷ Revenue, where labor cost is BLS **QCEW** total quarterly wages for NAICS 722513, monthly-split by QCEW headcount. Captures industry-wide wage and headcount pressure but NOT company-specific scheduling, tip-credit, or per-store productivity. |
+| Implied Traffic Index | Derived | Limited-Service Revenue ÷ Limited-Service CPI. Real volume of transactions implied by dividing the limited service revenue by the limited service CPI. |
+| Food Input Price Index | FRED / BLS PPI series **PCU311311** | Measures the average change over time in the selling prices recieved by domestic food manufacturers for their output. PPI is from the seller/producer perspective and not the consumer perspective. |
+| Food Cost % Revenue | Derived | Anchored at a 30% starting food-cost ratio that measures the ratio between the indexed food manufacturing PPI and the food industry CPI. |
+| Labor Cost % Revenue | Derived | Labor cost ÷ Revenue, where labor cost is BLS QCEW total quarterly wages for NAICS 722513, monthly-split by QCEW headcount. Captures industry-wide wage and headcount pressure but NOT company-specific scheduling, tip-credit, or per-store productivity. |
 | Restaurant Profit | Derived | Revenue × 0.80 − Food Cost − Labor Cost. Industry-wide four-wall economics implied by the macros above. Analogous to public-co "restaurant-level profit" but constructed top-down; the 0.80 reflects a flat 20% allowance for occupancy / marketing / utilities / supplies that the app deliberately does not chart on its own. |
 | Profit Margin | Derived | Restaurant Profit ÷ Revenue. |
 """
