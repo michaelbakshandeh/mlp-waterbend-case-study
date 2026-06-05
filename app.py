@@ -53,7 +53,7 @@ MACRO_SOURCES_MD = """\
 | Food Input Price Index | FRED / BLS PPI series **PCU311311** | Measures the average change over time in the selling prices recieved by domestic food manufacturers for their output. PPI is from the seller/producer perspective and not the consumer perspective. |
 | Food Cost % Revenue | Derived | Anchored at a 30% starting food-cost ratio that measures the ratio between the indexed food manufacturing PPI and the food industry CPI. |
 | Labor Cost % Revenue | Derived | Labor cost ÷ Revenue, where labor cost is BLS QCEW total quarterly wages for NAICS 722513, monthly-split by QCEW headcount. Captures industry-wide wage and headcount pressure but NOT company-specific scheduling, tip-credit, or per-store productivity. |
-| Restaurant Profit | Derived | Revenue × 0.80 − Food Cost − Labor Cost. Industry-wide four-wall economics implied by the macros above. Analogous to public-co "restaurant-level profit" but constructed top-down; the 0.80 reflects a flat 20% allowance for occupancy / marketing / utilities / supplies that the app deliberately does not chart on its own. |
+| Restaurant Profit | Derived | Revenue × 0.80 − Food Cost − Labor Cost. A bottoms-up proxy of restaurant profit, making an assumption that other operating costs are fixed as a % of revenue. |
 | Profit Margin | Derived | Restaurant Profit ÷ Revenue. |
 """
 
