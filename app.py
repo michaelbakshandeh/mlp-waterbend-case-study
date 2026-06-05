@@ -47,10 +47,10 @@ def _fmt_raw(metric: str) -> str:
 MACRO_SOURCES_MD = """\
 | Metric | Source | Definition / methodology |
 |---|---|---|
-| Limited-Service Revenue | BLS series **SM72251XUSN** | Monthly retail sales for limited-service eating places. Limited service eating places are restaurant/food service establishments where customers order/select food before eating and pay before eating (includes: pizza, takeout, fast-food, fast casual). |
+| Limited-Service Revenue | FRED series **SM72251XUSN** | Monthly retail sales for limited-service eating places, in USD millions. Limited service eating places are restaurant/food service establishments where customers order/select food before eating and pay before eating (includes: pizza, takeout, fast-food, fast casual). |
 | Limited-Service CPI | BLS CPI series **CUUR0000SEFV02** | "Limited service meals and snacks", US city avg, not seasonally adjusted. Tracks the price consumers pay at the register; excludes mix-shift effects (such as LTOs) that companies report inside their own ticket calc. |
 | Implied Traffic Index | Derived | Limited-Service Revenue ÷ Limited-Service CPI. Real volume of transactions implied by dividing the limited service revenue by the limited service CPI. |
-| Food Input Price Index | FRED / BLS PPI series **PCU311311** | Measures the average change over time in the selling prices recieved by domestic food manufacturers for their output. PPI is from the seller/producer perspective and not the consumer perspective. |
+| Food Input Price Index | FRED / BLS PPI series **PCU311311** | Measures the average change over time in the selling prices received by domestic food manufacturers for their output. PPI is from the seller/producer perspective and not the consumer perspective. |
 | Food Cost % Revenue | Derived | Anchored at a 30% starting food-cost ratio that measures the ratio between the indexed food manufacturing PPI and the food industry CPI. |
 | Labor Cost % Revenue | Derived | Labor cost ÷ Revenue, where labor cost is BLS QCEW total quarterly wages for limited service restarants. Data captures ~95% of employees so can be considered groud truth for the industry, but comes out on a 6mo-lag. |
 | Restaurant Profit | Derived | Revenue × 0.80 − Food Cost − Labor Cost. A bottoms-up proxy of restaurant profit, making an assumption that other operating costs are fixed as a % of revenue. |
